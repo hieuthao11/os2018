@@ -1,0 +1,10 @@
+thaobeo@thaobeo-Vostro-14-5480:~$ cd /bin
+thaobeo@thaobeo-Vostro-14-5480:/bin$ ls | grep list
+thaobeo@thaobeo-Vostro-14-5480:/bin$ cat /etc/passwd | wc -l
+40
+thaobeo@thaobeo-Vostro-14-5480:/bin$ free -h | grep Mem: | awk '{print $2}'
+3.8G
+thaobeo@thaobeo-Vostro-14-5480:/bin$ grep processor /proc/cpuinfo | wc -l
+4
+thaobeo@thaobeo-Vostro-14-5480:/bin$ find ~/Pictures/ -iname '*.jpg' | wc -l0
+thaobeo@thaobeo-Vostro-14-5480:/bin$ 
