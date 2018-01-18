@@ -1,0 +1,57 @@
+thaobeo@thaobeo-Vostro-14-5480:~$ cat /proc/$(pgrep -x systemd | tail -n 1)/sched
+systemd (982, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :         69686.855924
+se.vruntime                                  :            14.813874
+se.sum_exec_runtime                          :            16.143761
+se.nr_migrations                             :                    2
+nr_switches                                  :                   16
+nr_voluntary_switches                        :                   11
+nr_involuntary_switches                      :                    5
+se.load.weight                               :              1048576
+se.avg.load_sum                              :               329728
+se.avg.util_sum                              :                78848
+se.avg.load_avg                              :                    0
+se.avg.util_avg                              :                    0
+se.avg.last_update_time                      :          69686855924
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                   24
+mm->numa_scan_seq                            :                    0
+numa_pages_migrated                          :                    0
+numa_preferred_nid                           :                   -1
+total_numa_faults                            :                    0
+current_node=0, numa_group_id=0
+numa_faults node=0 task_private=0 task_shared=0 group_private=0 group_shared=0
+thaobeo@thaobeo-Vostro-14-5480:~$ cat /proc/sched_debug | grep systemd
+   systemd-udevd   270       555.576033       581   120         0.000000       413.764349         0.000000 0 0 /autogroup-11
+         systemd   982        14.813874        16   120         0.000000        16.143761         0.000000 0 0 /autogroup-74
+         systemd     1       219.012675      1561   120         0.000000      1125.501466         0.000000 0 0 /autogroup-2
+  systemd-logind   855        25.468137       313   120         0.000000       132.319862         0.000000 0 0 /autogroup-60
+ systemd-journal   255        62.743052      1074   120         0.000000       270.333394         0.000000 0 0 /autogroup-9
+ systemd-timesyn   404         2.465870        60   120         0.000000        11.565297         0.000000 0 0 /autogroup-30
+thaobeo@thaobeo-Vostro-14-5480:~$ cat /proc/1/sched
+systemd (1, #threads: 1)
+-------------------------------------------------------------------
+se.exec_start                                :       2867640.533799
+se.vruntime                                  :           345.129763
+se.sum_exec_runtime                          :          1155.392898
+se.nr_migrations                             :                  186
+nr_switches                                  :                 1612
+nr_voluntary_switches                        :                 1245
+nr_involuntary_switches                      :                  367
+se.load.weight                               :              1048576
+se.avg.load_sum                              :              2612032
+se.avg.util_sum                              :              2612032
+se.avg.load_avg                              :                   54
+se.avg.util_avg                              :                   54
+se.avg.last_update_time                      :        2867640533799
+policy                                       :                    0
+prio                                         :                  120
+clock-delta                                  :                   70
+mm->numa_scan_seq                            :                    0
+numa_pages_migrated                          :                    0
+numa_preferred_nid                           :                   -1
+total_numa_faults                            :                    0
+current_node=0, numa_group_id=0
+numa_faults node=0 task_private=0 task_shared=0 group_private=0 group_shared=0
